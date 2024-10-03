@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Matemasie&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Croissant+One&display=swap");
+
+body {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(48, 70, 136),
+    rgb(58, 65, 125),
+    rgb(73, 79, 131),
+    rgb(185, 193, 223),
+    white
+  );
+}
+h1 {
+  font-family: "Matemasie", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(220, 237, 255);
+}
+.card-name {
+  color: rgb(55, 3, 3);
+  font-family: "Croissant One", serif;
+  font-weight: 1000;
+  font-style: normal;
+  font-size: 20px;
+}
+.App {
+  display: grid;
+  font-family: sans-serif;
+  text-align: center;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+.parent-container {
+  display: grid;
+  padding: 15px;
+  background-color: rgb(80, 85, 102);
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  margin: 0 auto;
+}
+.tarot-container {
+  display: grid;
+  height: 500px;
+  background-color: rgb(178, 181, 205);
+  border-radius: 10px;
+  border-left: 15px solid rgb(125, 133, 158);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.tarot-display-img {
+  width: 150px;
+  animation: glow 2s infinite;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.tarot-display-img:hover {
+  transform: scale(1.2); /* Scale the image on hover */
+  box-shadow: 0 0 20px 10px rgba(239, 189, 254, 0.7); /* Glowing effect */
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgb(239, 189, 254);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+}
+.pages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.card-section {
+  border-right: 5px dotted rgba(116, 122, 148, 0.271); /* Adds a vertical line */
+}
+.fortune-section ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 0;
+  margin: 0;
+}
+
+.fortune-section li {
+  display: flex;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-family: "Croissant One", serif;
+  font-weight: 850;
+  font-style: normal;
+  color: rgb(55, 3, 3);
+}
+
+.fortune-section li::before {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the bullet */
+  font-size: 20px;
+  color: rgba(73, 21, 71, 0.638);
+}
+
+.fortune-section li:hover {
+  background-color: rgba(251, 240, 255, 0.6);
+  transform: scale(1.05);
+}
+
+.draw-button-container {
+  padding-top: 20px;
+}
+
+.draw-card-button {
+  padding: 10px 20px;
+  background-color: #d987e2;
+  border: none;
+  border-radius: 25px;
+  font-family: "Matemasie", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+}
+
+.draw-card-button:hover {
+  background-color: #ae73c3;
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.draw-card-button:active {
+  animation: wiggle 0.2s ease-in-out;
+  transform: scale(1.05);
+}
